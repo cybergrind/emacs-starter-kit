@@ -15,3 +15,7 @@
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
 (require 'slime)
 (slime-setup)
+
+
+(add-to-list load-path (cons "~/.emacs.d/twisted_emacs/" load-path))
+(require 'twisted-dev)
