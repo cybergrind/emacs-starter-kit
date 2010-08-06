@@ -11,6 +11,7 @@
 ;  ;; If there is more than one, they won't work right.
 ; '(org-level-4 ((t (:inherit outline-4 :foreground "#F04" :weight bold)))))
 ;
+
 (setq inferior-lisp-program "/usr/bin/clisp")
 (add-to-list 'load-path "/usr/share/emacs/site-lisp/slime/")
 (require 'slime)
