@@ -16,6 +16,13 @@
 (require 'slime)
 (slime-setup)
 
+(add-to-list 'load-path "~/.emacs.d/erlang")
+(setq erlang-root-dir "/usr/lib/erlang")
+(setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
+(require 'erlang-start)
 
-(add-to-list load-path (cons "~/.emacs.d/twisted_emacs/" load-path))
-(require 'twisted-dev)
+(add-to-list 'auto-mode-alist '("\\.erl\\'" . erlang-mode))
+
+
+;(add-to-list load-path (cons "~/.emacs.d/twisted_emacs/" load-path))
+;(require 'twisted-dev)
