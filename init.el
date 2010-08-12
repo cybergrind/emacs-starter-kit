@@ -62,6 +62,11 @@
 (regen-autoloads)
 (load custom-file 'noerror)
 
+;; emacs common config
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+
+
 ;; You can keep system- or user-specific customizations here
 (setq system-specific-config (concat dotfiles-dir system-name ".el")
       user-specific-config (concat dotfiles-dir user-login-name ".el")
