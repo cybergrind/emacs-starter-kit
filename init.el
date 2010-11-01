@@ -79,3 +79,8 @@
   (mapc #'load (directory-files user-specific-dir nil ".*el$")))
 
 ;;; init.el ends here
+
+(add-hook 'shell-mode-hook '(lambda () (toggle-truncate-lines 1)))
+(setq comint-prompt-read-only t)
+
+
