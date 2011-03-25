@@ -91,3 +91,8 @@
 
 (provide 'starter-kit-bindings)
 ;;; starter-kit-bindings.el ends here
+(global-set-key "\C-x\M-z" 'end-of-buffer)
+(global-set-key "\C-x\M-a" 'beginning-of-buffer)
+
+(global-set-key [f1] 'scroll-down)
+(global-set-key [f2] 'scroll-up)
