@@ -20,9 +20,29 @@
 (setq erlang-root-dir "/usr/lib/erlang")
 (setq exec-path (cons "/usr/lib/erlang/bin" exec-path))
 (require 'erlang-start)
-
 (add-to-list 'auto-mode-alist '("\\.erl\\'" . erlang-mode))
 
 
-;(add-to-list load-path (cons "~/.emacs.d/twisted_emacs/" load-path))
+;(add-to-list 'load-path "~/.emacs.d/twisted_emacs/")
 ;(require 'twisted-dev)
+
+(add-hook 'erlang-mode-hook
+          (lambda ()
+                ;; when starting an Erlang shell in Emacs, default in
+            ;; the node name
+            (setq inferior-erlang-machine-options '("-sname" "emacs" "-setcookie" "GNKLJMBXGHZGBUTLADHT"))
+            ;; add Erlang functions to an imenu menu
+            (imenu-add-to-menubar "imenu")))
+
+(add-to-list 'load-path "/home/kpi/.emacs.d/distel/elisp")
+(require 'distel)
+(distel-setup)
+
+(require 'pymacs)
+(pymacs-load "ropemacs" "rope-")
+
+; (setq whitespace-line-column '(80 (#o144, #x64)))
+
+(require 'color-theme)
+(autoload 'python-mode "python-mode.el" "Python mode." t)
+(setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
