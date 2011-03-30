@@ -30,7 +30,7 @@
           (lambda ()
                 ;; when starting an Erlang shell in Emacs, default in
             ;; the node name
-            (setq inferior-erlang-machine-options '("-sname" "emacs" "-setcookie" "GNKLJMBXGHZGBUTLADHT"))
+            (setq inferior-erlang-machine-options '("-sname" "emacs" "-setcookie" "GNKLJMBXGHZGBUTLADHT"))  
             ;; add Erlang functions to an imenu menu
             (imenu-add-to-menubar "imenu")))
 
@@ -41,8 +41,12 @@
 (require 'pymacs)
 (pymacs-load "ropemacs" "rope-")
 
-; (setq whitespace-line-column '(80 (#o144, #x64)))
+(setq whitespace-line-column 80)
 
 (require 'color-theme)
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (setq auto-mode-alist (append '(("/*.\.py$" . python-mode)) auto-mode-alist))
+
+(autoload 'sgml-mode "psgml" "Major mode to edit SGML files." t)
+(autoload 'xml-mode "psgml" "Major mode to edit XML files." t)
+
